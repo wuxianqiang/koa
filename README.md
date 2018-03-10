@@ -36,11 +36,11 @@ const app = new Koa()
 const router = new Router()
 const routerUser = new Router()
 
-routerUser.get("/1.html", function (req, res) {
-  res.send("1")
+routerUser.get("/1.html", async (ctx, next) {
+  ctx.body("1")
 })
-routerUser.get("/2.html", function (req, res) {
-  res.send("2")
+routerUser.get("/2.html", async (ctx, next) {
+  ctx.body("2")
 })
 
 app.use(router.routes())
